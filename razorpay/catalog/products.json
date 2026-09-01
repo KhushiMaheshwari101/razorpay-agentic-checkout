@@ -1,0 +1,82 @@
+[
+  {
+    "id": "sf-basic-monthly",
+    "name": "StreamFlix Basic (Monthly)",
+    "category": "subscription",
+    "price_inr": 149,
+    "billing_cycle": "monthly",
+    "description": "1 screen, HD streaming, ads included. Auto-renews monthly.",
+    "features": ["1 screen", "HD (720p)", "Ad-supported"],
+    "in_stock": true
+  },
+  {
+    "id": "sf-standard-monthly",
+    "name": "StreamFlix Standard (Monthly)",
+    "category": "subscription",
+    "price_inr": 499,
+    "billing_cycle": "monthly",
+    "description": "2 screens, Full HD streaming, no ads. Auto-renews monthly.",
+    "features": ["2 screens", "Full HD (1080p)", "Ad-free"],
+    "in_stock": true
+  },
+  {
+    "id": "sf-premium-monthly",
+    "name": "StreamFlix Premium (Monthly)",
+    "category": "subscription",
+    "price_inr": 649,
+    "billing_cycle": "monthly",
+    "description": "4 screens, 4K + HDR streaming, no ads, offline downloads. Auto-renews monthly.",
+    "features": ["4 screens", "4K + HDR", "Ad-free", "Offline downloads"],
+    "in_stock": true
+  },
+  {
+    "id": "sf-family-annual",
+    "name": "StreamFlix Family Annual Bundle",
+    "category": "subscription",
+    "price_inr": 17999,
+    "billing_cycle": "annual",
+    "description": "6 screens, 4K + HDR, no ads, offline downloads, kids profiles. Billed once a year.",
+    "features": ["6 screens", "4K + HDR", "Ad-free", "Offline downloads", "Kids profiles"],
+    "in_stock": true
+  },
+  {
+    "id": "prod-esp32-wroom",
+    "name": "ESP32 Dev Board (WROOM-32)",
+    "category": "electronics",
+    "price_inr": 499,
+    "billing_cycle": "one-time",
+    "description": "Dual-core 240MHz microcontroller with built-in Wi-Fi & Bluetooth 4.2 BLE for IoT development.",
+    "features": ["Wi-Fi + BLE", "Dual-Core", "Type-C Header", "30-pin GPIO"],
+    "in_stock": true
+  },
+  {
+    "id": "prod-sony-soundbar",
+    "name": "Sony HT-S20R 5.1ch Home Cinema Soundbar",
+    "category": "electronics",
+    "price_inr": 17990,
+    "billing_cycle": "one-time",
+    "description": "5.1ch real surround sound with rear speakers, subwoofer, Dolby Digital, Bluetooth connectivity.",
+    "features": ["400W Power", "5.1 Channel", "Dolby Digital", "Subwoofer"],
+    "in_stock": true
+  },
+  {
+    "id": "prod-boat-earbuds",
+    "name": "boAt Airdopes 141 ANC Earbuds",
+    "category": "electronics",
+    "price_inr": 1499,
+    "billing_cycle": "one-time",
+    "description": "True wireless earbuds with 32dB Active Noise Cancellation, 42 hours playback, ENx quad mics.",
+    "features": ["32dB ANC", "42 Hours Battery", "Low Latency Gaming", "IPX5"],
+    "in_stock": true
+  },
+  {
+    "id": "prod-nordvpn-annual",
+    "name": "NordVPN Ultimate Security Annual",
+    "category": "subscription",
+    "price_inr": 4599,
+    "billing_cycle": "annual",
+    "description": "High-speed encrypted VPN with threat protection, cross-platform password manager, 1TB cloud storage.",
+    "features": ["6 Devices", "1TB Cloud Storage", "Threat Protection", "Ad Blocker"],
+    "in_stock": true
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "chain_valid": true,
+  "receipt_count": 2,
+  "receipts": [
+    {
+      "amount_inr": 17990,
+      "checkout_mode": "fallback",
+      "checkout_order_id": "sim_order_1a180ef8f351",
+      "grounding_passed": true,
+      "mandate_chain_hash": "19ae94978b7c3d3d7ca2fdcfa7f6868b5eaca0082da217a7696466fd56771f92",
+      "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "receipt_id": "rcpt_1715b7cc",
+      "this_hash": "97a4b07dac3ebd86ad0eed3fcf37091dcae2f7e7581a5849e92718f88688e088",
+      "timestamp": 1788280971.3981812
+    },
+    {
+      "amount_inr": 149,
+      "checkout_mode": "fallback",
+      "checkout_order_id": "sim_order_7956fffe49d3",
+      "grounding_passed": true,
+      "mandate_chain_hash": "b6355a6381394da6f0d773038624932add0a29b4ba6380f97dc438fae17f0804",
+      "prev_hash": "97a4b07dac3ebd86ad0eed3fcf37091dcae2f7e7581a5849e92718f88688e088",
+      "receipt_id": "rcpt_22d744c0",
+      "this_hash": "e6332fd700dc2478b7edde398a26f1c6bf9cc35826e1731c0912800bcc605063",
+      "timestamp": 1788282365.468897
+    }
+  ]
+}
