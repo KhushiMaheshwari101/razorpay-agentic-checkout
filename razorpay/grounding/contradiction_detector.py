@@ -67,6 +67,20 @@ class ContradictionDetector:
             r"max\s+(?:of\s+)?(\d+(?:\.\d+)?)",
         ]
 
+        # Patterns that indicate a prompt-injection / instruction-override attempt
+        self.injection_patterns = [
+            r"ignore\s+(?:the\s+)?(?:previous|prior|above|all)\s+instructions?",
+            r"disregard\s+(?:the\s+)?(?:previous|prior|above|all)\s+instructions?",
+            r"forget\s+(?:the\s+)?(?:previous|prior|above|all)\s+(?:instructions?|rules?|context)",
+            r"you\s+are\s+now\s+(?:a|an)\s+",
+            r"system\s*prompt",
+            r"new\s+instructions?\s*:",
+            r"override\s+(?:the\s+)?(?:previous|prior|system)",
+            r"call\s+checkout\s*\(",          # direct function-call injection attempt
+            r"\bamount\s*=\s*\d+",             # attacker trying to set amount= directly
+            r"act\s+as\s+(?:if|though)",
+        ]
+
     def detect_contradictions(
         self, 
         user_intent_text: str, 
@@ -81,6 +95,13 @@ class ContradictionDetector:
         else:
             intent_str = user_intent_text.lower().strip()
 
+        # 0. Prompt-injection check runs first
+        for pattern in self.injection_patterns:
+            if re.search(pattern, intent_str, re.IGNORECASE):
+                raw_contradictions.append(
+                    f"BLOCKED: Prompt-injection / instruction-override attempt detected in user input (pattern: '{pattern}')."
+                )
+
         try:
             safe_total_spend = max(0.0, float(total_spend or 0.0))
         except (ValueError, TypeError):
@@ -90,6 +111,7 @@ class ContradictionDetector:
             safe_max_limit = max(0.0, float(max_spend_limit or 0.0))
         except (ValueError, TypeError):
             safe_max_limit = 0.0
+
 
         for pattern in self.spend_limit_patterns:
             match = re.search(pattern, intent_str)
