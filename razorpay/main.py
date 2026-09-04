@@ -249,7 +249,9 @@ def main():
     parser.add_argument("--cli", action="store_true", help="Run interactive CLI buyer agent")
     parser.add_argument("--demo", action="store_true", help="Run automated test suite demo")
     parser.add_argument("--serve", action="store_true", help="Run FastAPI web server")
-    parser.add_argument("--port", type=int, default=8000, help="Port for web server (default: 8000)")
+    default_port = int(os.environ.get("PORT", 8000))
+    parser.add_argument("--port", type=int, default=default_port, help=f"Port for web server (default: {default_port})")
+    parser.add_argument("--host", type=str, default=os.environ.get("HOST", "0.0.0.0"), help="Host IP to bind (default: 0.0.0.0)")
     args = parser.parse_args()
 
     if args.cli:
@@ -257,8 +259,9 @@ def main():
     elif args.demo:
         run_automated_demo()
     else:
-        print(f"Starting Razorpay Agentic Checkout Server on http://127.0.0.1:{args.port} ...")
-        uvicorn.run(app, host="127.0.0.1", port=args.port)
+        print(f"Starting Razorpay Agentic Checkout Server on http://{args.host}:{args.port} ...")
+        uvicorn.run(app, host=args.host, port=args.port)
+
 
 
 if __name__ == "__main__":

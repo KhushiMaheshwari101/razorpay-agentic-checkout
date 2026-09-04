@@ -139,29 +139,57 @@ All metrics are self-measured and reproducible on demand:
 
 ---
 
-## 9. Quickstart
+## 9. Quickstart (Local)
 
 ### 1. Setup Environment
-```powershell
+```bash
 pip install -r requirements.txt
-cp .env.example .env
+cp .env.example .env   # Fill in RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET, GROQ_API_KEY
 ```
 
 ### 2. Run All Adversarial Benchmarks
-```powershell
+```bash
 python main.py --demo
 # or with pytest:
 pytest tests/
 ```
 
 ### 3. Interactive CLI Buyer Agent
-```powershell
+```bash
 python main.py --cli
 ```
 
-### 4. Launch Mandate Lifecycle Web Dashboard
-```powershell
+### 4. Launch Web Dashboard
+```bash
 python main.py --serve --port 8000
 ```
-Open **http://127.0.0.1:8000** in your browser to interact with the live dashboard.
+Open **http://127.0.0.1:8000** in your browser.
+
+---
+
+## 10. ☁️ Cloud Deployment (Render.com — 1 Click, Always-On)
+
+Deploy this project publicly so it runs **24/7 without needing your computer**:
+
+### Step 1: Push to GitHub
+```bash
+git init
+git add .
+git commit -m "Razorpay Agentic Checkout — Track 01 Final Release"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/razorpay-agentic-checkout.git
+git push -u origin main
+```
+
+### Step 2: Deploy on Render (Free Tier)
+1. Go to **[https://render.com](https://render.com)** → Sign up / Login with GitHub.
+2. Click **"New +"** → **"Web Service"** → Connect your GitHub repo.
+3. Render auto-detects `render.yaml` — click **Deploy**.
+4. Go to **Environment → Add Environment Variables:**
+   - `RAZORPAY_KEY_ID` = your Razorpay test key
+   - `RAZORPAY_KEY_SECRET` = your Razorpay test secret
+   - `GROQ_API_KEY` = your Groq API key
+5. Your app will be live at: **`https://razorpay-agentic-checkout.onrender.com`**
+
+> **Free tier note:** Render free tier sleeps after 15 min of inactivity. For a always-awake demo, use [Railway.app](https://railway.app) or [Fly.io](https://fly.io) instead.
 

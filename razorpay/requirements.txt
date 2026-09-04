@@ -16,4 +16,6 @@ rich
 pydantic-settings
 pytest-asyncio
 loguru
-cryptography
+cryptography
+razorpay
+
