@@ -1,7 +1,18 @@
+---
+title: Razorpay Agentic Checkout
+emoji: 💳
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+app_port: 7860
+pinned: false
+---
+
 # Razorpay Agentic Checkout — Bounded Buyer Agent & Trust Infrastructure
 **Track 01: AI Growth & Agentic Commerce | Razorpay AI Buildathon 2026**
 
 ---
+
 
 ## 1. Pitch & Core Idea
 
