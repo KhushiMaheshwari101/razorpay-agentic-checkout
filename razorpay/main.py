@@ -17,7 +17,7 @@ import uuid
 import argparse
 import uvicorn
 from fastapi import FastAPI, UploadFile, File
-from fastapi.responses import HTMLResponse, JSONResponse
+from fastapi.responses import HTMLResponse, JSONResponse, FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 
 from pydantic import BaseModel
@@ -179,6 +179,18 @@ async def api_upload_catalog_file(file: UploadFile = File(...)):
         "count": len(items_to_add),
         "message": f"Successfully imported and FAISS-indexed {len(items_to_add)} products from '{file.filename}'."
     })
+
+
+@app.get("/api/download_bible")
+async def download_master_bible():
+    here = os.path.dirname(os.path.abspath(__file__))
+    pdf_path = os.path.join(here, "Razorpay_Agentic_Checkout_35Page_Master_Bible.pdf")
+    if not os.path.exists(pdf_path):
+        pdf_path = os.path.join(here, "Razorpay_Agentic_Checkout_Master_Brief.pdf")
+    if os.path.exists(pdf_path):
+        return FileResponse(pdf_path, media_type="application/pdf", filename="Razorpay_Agentic_Checkout_Complete_Master_Bible.pdf")
+    return JSONResponse(status_code=404, content={"error": "Master bible PDF not found."})
+
 
 
 

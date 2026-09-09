@@ -1,6 +1,6 @@
 {
   "chain_valid": true,
-  "receipt_count": 2,
+  "receipt_count": 3,
   "receipts": [
     {
       "amount_inr": 17990,
@@ -23,6 +23,17 @@
       "receipt_id": "rcpt_22d744c0",
       "this_hash": "e6332fd700dc2478b7edde398a26f1c6bf9cc35826e1731c0912800bcc605063",
       "timestamp": 1788282365.468897
+    },
+    {
+      "amount_inr": 17990,
+      "checkout_mode": "fallback",
+      "checkout_order_id": "sim_order_f051084c7f7c",
+      "grounding_passed": true,
+      "mandate_chain_hash": "a754d0b5238c5c6a92bbac174a739390b3466d5611dd8f2ed8feafa48e1b6e1c",
+      "prev_hash": "e6332fd700dc2478b7edde398a26f1c6bf9cc35826e1731c0912800bcc605063",
+      "receipt_id": "rcpt_5f5f0f1a",
+      "this_hash": "6d452a94cd1ec80f1c9659c8d40e0b7fdefce89f9ad1abea00028f80bfacde88",
+      "timestamp": 1788546168.5418234
     }
   ]
 }
